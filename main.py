@@ -11,7 +11,7 @@ def index():
     cities = ["Winnipeg", "Brandon", "Steinbach", "Westhawk"]
     return render_template("index.html" , some_text=some_text, current_year=current_year, cities=cities)
 
-@app.route("/about", methods=["GET", "POST"])
+@app.route("/about-me", methods=["GET", "POST"])
 def about():
     if request.method == "GET":
         return render_template("about.html")
