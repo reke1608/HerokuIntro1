@@ -25,6 +25,8 @@ def contact():
     print(contact_email)
     print(contact_message)
 
+    return render_template ("success.html")
+
 
 if __name__ == '__main__':
     app.run()
