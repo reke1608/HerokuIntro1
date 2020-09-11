@@ -32,7 +32,7 @@ def about():
         return response
 
 
-@app.route("/about-me", methods=["POST"])
+@app.route("/contact", methods=["POST"])
 def contact():
     contact_name = request.form.get("contact-name")
     contact_email = request.form.get("contact-email")
