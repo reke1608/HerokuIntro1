@@ -14,7 +14,9 @@ def index():
 @app.route("/about-me", methods=["GET", "POST"])
 def about():
     if request.method == "GET":
-        return render_template("about.html")
+        user_name = request.cookies.get("user_name")
+        return render_template("about.html", name=user_name)
+
     elif request.method == "POST":
         contact_name = request.form.get("contact-name")
         contact_email = request.form.get("contact-email")
@@ -23,6 +25,9 @@ def about():
         print(contact_name)
         print(contact_email)
         print(contact_message)
+
+        response = make_response(render_template("success.html"))
+        response.set_cookies("user_name", contact_name )
 
         return render_template("success.html")
 

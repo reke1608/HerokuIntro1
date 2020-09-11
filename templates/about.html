@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
+    {% if name %}
+    <p>Hello {{name}}!</p>
+    {% elseif %}
     <h1>More about me :)</h1>
-    <h2>My name is Ferdinand</h2>
+    {% endif %}
+
 
     <form method="post" action="/about-me">
         <input type="text" name="contact name" placeholder="Enter Your Name">
